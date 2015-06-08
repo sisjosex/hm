@@ -1,0 +1,263 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+
+    <meta name="viewport"
+          content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <title>HM</title>
+
+    <link rel="stylesheet" href="lib/onsen/css/onsenui.css">
+    <link rel="stylesheet" href="lib/onsen/css/onsen-css-components-blue-basic-theme.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <script src="lib/onsen/js/angular/angular.js"></script>
+    <script src="lib/jquery-2.1.4.min.js"></script>
+    <script src="lib/onsen/js/onsenui.js"></script>
+    <script src="js/app.js"></script>
+
+</head>
+<body>
+
+
+<ons-sliding-menu main-page="page.html" menu-page="menu.html" max-slide-distance="260px" type="push" var="slidingMenu">
+</ons-sliding-menu>
+
+<ons-template id="page.html">
+    <ons-navigator var="mainNavigator" ng-controller="MainNavigatorController">
+    </ons-navigator>
+</ons-template>
+
+<ons-template id="menu.html">
+    <ons-page modifier="menu-page">
+
+        <ons-toolbar modifier="transparent">
+            <div class="right">
+                <!--<ons-toolbar-button class="menu-close" onclick="slidingMenu.close()">
+                    </ons-icon>Close
+                </ons-toolbar-button>-->
+            </div>
+        </ons-toolbar>
+
+        <ons-list class="menu-list">
+            <ons-list-item class="menu-item" ng-click="menu.close()">
+                PERFIL
+            </ons-list-item>
+
+            <ons-list-item class="menu-item light" onclick="goToIniciarSesion()">
+                <ons-icon icon="fa-user"></ons-icon>
+                INICIAR SESÍON
+            </ons-list-item>
+
+            <ons-list-item class="menu-item" ng-click="menu.close()">
+                MENÚ
+            </ons-list-item>
+
+            <ons-list-item class="menu-item light" onclick="goToInicio()">
+                <ons-icon icon="fa-home"></ons-icon>
+                INICIO
+            </ons-list-item>
+
+            <ons-list-item class="menu-item light" ng-click="menu.close()">
+                <ons-icon icon="fa-home"></ons-icon>
+                DESTINOS ÚLTIMO MINUTO
+            </ons-list-item>
+
+            <ons-list-item class="menu-item light" onclick="goToBuscador()">
+                <ons-icon icon="fa-home"></ons-icon>
+                BUSCADOR GENERAL
+            </ons-list-item>
+
+            <ons-list-item class="menu-item light" ng-click="menu.close()">
+                <ons-icon icon="fa-home"></ons-icon>
+                VACACIONES Y ESCAPADAS
+            </ons-list-item>
+
+            <ons-list-item class="menu-item" ng-click="menu.close()">
+                COMPARTIR
+            </ons-list-item>
+
+            <ons-list-item class="menu-item light" ng-click="menu.close()">
+                <ons-icon icon="fa-home"></ons-icon>
+                COMPARTIR EN FACEBOOK
+            </ons-list-item>
+
+            <ons-list-item class="menu-item light" ng-click="menu.close()">
+                <ons-icon icon="fa-home"></ons-icon>
+                COMPARTIR EN TWITTER
+            </ons-list-item>
+
+            <ons-list-item class="menu-item light" ng-click="menu.close()">
+                <ons-icon icon="fa-home"></ons-icon>
+                VALORA NUESTRA APP
+            </ons-list-item>
+
+            <ons-list-item class="menu-item" ng-click="menu.close()">
+                AYUDA
+            </ons-list-item>
+
+            <ons-list-item class="menu-item light" ng-click="menu.close()">
+                <ons-icon icon="fa-home"></ons-icon>
+                ¿COMO FUNCIONA?
+            </ons-list-item>
+
+            <ons-list-item class="menu-item light" ng-click="menu.close()">
+                <ons-icon icon="fa-home"></ons-icon>
+                ENVÍANOS COMENTARIOS
+            </ons-list-item>
+
+            <ons-list-item class="menu-item light" ng-click="menu.close()">
+                <ons-icon icon="fa-home"></ons-icon>
+                POLÍTICA DE PRIVACIDAD
+            </ons-list-item>
+
+            <ons-list-item class="menu-item light" ng-click="menu.close()">
+                <ons-icon icon="fa-home"></ons-icon>
+                TÉRMINOS Y CONDICIONES
+            </ons-list-item>
+        </ons-list>
+
+    </ons-page>
+</ons-template>
+
+<ons-template id="home.html">
+    <ons-page ng-controller="HomeController">
+        <ons-toolbar>
+            <div class="left">
+                <ons-toolbar-button class="separators-right" onclick="slidingMenu.toggle()">
+                    <img class="header-icon" src="images/icon_menu.png">
+                </ons-toolbar-button>
+            </div>
+
+            <div class="center">
+                <img class="logo responsive" src="images/header_logo.png">
+            </div>
+
+            <div class="right">
+                <ons-toolbar-button class="separators-left" onclick="slidingMenu.toggle()">
+                    <img class="header-icon" src="images/icon_map.png">
+                </ons-toolbar-button>
+
+                <ons-toolbar-button class="separators-left" onclick="slidingMenu.toggle()">
+                    <img class="header-icon" src="images/icon_phone.png">
+                </ons-toolbar-button>
+            </div>
+        </ons-toolbar>
+
+        <ons-content>
+            <div class="text-block">
+                <h3>El 25% de las habitaciones</h3>
+                <h3>de hotel <span>no llega a ocuparse</span></h3>
+            </div>
+
+            <div class="text-block blue">
+                <h3><span>Nosotros las ponemos a tu disposición</span></h3>
+                <h3>a precios low cost</h3>
+            </div>
+
+            <div class="video">
+                <img src="images/video.png">
+            </div>
+
+            <div class="home-footer">
+                <div class="button green">
+                    <div class="icon">
+                        <img src="images/icon_ultimo_minuto.png">
+                    </div>
+                    <span class="text">Buscador<br>
+                    Último Minuto</span>
+                </div>
+                <div class="button magenta">
+                    <div class="icon">
+                        <img src="images/icon_buscador_general.png">
+                    </div>
+                    <span class="text">Buscador<br>
+                    General</span>
+                </div>
+                <div class="button orange">
+                    <div class="icon">
+                        <img src="images/icon_paquetes_vacacionales.png">
+                    </div>
+                    <span class="text">Paquetes<br>
+                    Vacacionales</span>
+                </div>
+            </div>
+        </ons-content>
+    </ons-page>
+</ons-template>
+
+<ons-template id="login.html">
+    <ons-page ng-controller="LoginController">
+        <ons-content>
+            <div class="text-block">
+                <img class="logo_big" src="images/logo_big.png">
+            </div>
+
+            <form class="form">
+                <p class="center">
+                    <input class="input" type="text" placeholder="usuario">
+                </p>
+
+                <p class="center">
+                    <input class="input" type="password" placeholder="contraseña">
+                </p>
+
+                <div class="right">
+                    <label class="light" style="display:inline-block">Recordar Datos</label>
+                    <div style="display:inline-block;position:relative;width: 20px;height: 20px;">
+                        <div style="position:absolute;left: 0;top: 0;width: 25px;height: 25px;" class="checkbox"></div>
+                        <input style="position:absolute;left: 0;top: 0;width: 25px;height: 25px; opacity: 0;" type="checkbox" onchange="onChangeCheckbox(this)" />
+                    </div>
+                </div>
+
+                <p class="center bold">
+                    > iniciar sesión <
+                </p>
+
+                <p class="center bold">
+
+                    <ons-button class="blue" modifier="large--cta">
+                        nuevo usuario
+                    </ons-button>
+                </p>
+            </form>
+        </ons-content>
+    </ons-page>
+</ons-template>
+
+<ons-template id="busqueda.html">
+    <ons-page ng-controller="BusquedaController">
+
+        <ons-toolbar>
+            <div class="left">
+                <ons-toolbar-button class="separators-right" onclick="slidingMenu.toggle()">
+                    <img class="header-icon" src="images/icon_menu.png">
+                </ons-toolbar-button>
+            </div>
+
+            <div class="center">
+                <img class="logo responsive" src="images/header_logo.png">
+            </div>
+
+            <div class="right">
+                <ons-toolbar-button class="separators-left" onclick="slidingMenu.toggle()">
+                    <img class="header-icon" src="images/icon_map.png">
+                </ons-toolbar-button>
+
+                <ons-toolbar-button class="separators-left" onclick="slidingMenu.toggle()">
+                    <img class="header-icon" src="images/icon_phone.png">
+                </ons-toolbar-button>
+            </div>
+        </ons-toolbar>
+
+        <ons-content>
+        </ons-content>
+    </ons-page>
+</ons-template>
+
+</body>
+</html>
