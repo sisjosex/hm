@@ -58,11 +58,6 @@
     <preference name="SplashScreenDelay" value="1000000" />
 
     <preference name="splash-screen-duration" value="1000000" />
-    
-    <feature name="SplashScreen">
-        <param name="ios-package" value="CDVSplashScreen" />
-        <param name="android-package" value="org.apache.cordova.SplashScreen" />
-    </feature>
 
     <!-- Core plugins -->
     <gap:plugin name="org.apache.cordova.device" />
@@ -70,10 +65,15 @@
     <!--<gap:plugin name="org.apache.cordova.file" />-->
     <gap:plugin name="org.apache.cordova.geolocation" />
     <gap:plugin name="org.apache.cordova.network-information" />
-    <gap:plugin name="org.apache.cordova.splashscreen" />
     <gap:plugin name="org.li8.inappbrowser" />
     <!-- StatusBar -->
     <gap:plugin name="org.apache.cordova.statusbar" />
+
+    <gap:plugin name="org.apache.cordova.splashscreen" />
+    <feature name="SplashScreen">
+        <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
+        <param name="ios-package" value="CDVSplashScreen" />
+    </feature>
 
     <!-- Define app icon for each platform. -->
 
