@@ -12,7 +12,8 @@ module.controller('MainNavigatorController', function ($scope) {
         } catch (error) {
         }
 
-        mainNavigator.pushPage('home.html', {transition:'slide'});
+        slidingMenu.setMainPage('home.html');
+        //mainNavigator.pushPage('home.html', {transition:'none'});
     })
 });
 
@@ -20,10 +21,18 @@ var HomeController;
 module.controller('HomeController', function ($scope) {
     ons.ready(function () {
 
-        try {
-            navigator.splashscreen.hide();
-        } catch (error) {
-        }
+
+        setTimeout(function(){
+
+            console.log('hidding splash');
+
+            try {
+                navigator.splashscreen.hide();
+            } catch (error) {
+            }
+
+        }, 2000);
+
     })
 });
 
