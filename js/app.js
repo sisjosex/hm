@@ -8,7 +8,7 @@ module.controller('MainNavigatorController', function ($scope) {
     ons.ready(function () {
 
         try {
-            navigator.splashscreen.hide();
+            StatusBar.hide();
         } catch (error) {
         }
 
@@ -20,7 +20,10 @@ var HomeController;
 module.controller('HomeController', function ($scope) {
     ons.ready(function () {
 
-
+        try {
+            navigator.splashscreen.hide();
+        } catch (error) {
+        }
     })
 });
 
