@@ -242,12 +242,15 @@
             </div>
 
             <div class="center">
-                <img class="logo responsive" src="images/header_logo.png">
+                <div class="title">
+                    <img class="biglogo responsive" src="images/logo_big.png">
+                    <span>BUSC. GENERAL</span>
+                </div>
             </div>
 
             <div class="right">
                 <ons-toolbar-button class="separators-left" onclick="slidingMenu.toggle()">
-                    <img class="header-icon" src="images/icon_map.png">
+                    <img class="header-icon" src="images/icon_lupa.png">
                 </ons-toolbar-button>
 
                 <ons-toolbar-button class="separators-left" onclick="slidingMenu.toggle()">
@@ -257,6 +260,14 @@
         </ons-toolbar>
 
         <ons-content>
+            <div class="relative img-buscador">
+                <img src="images/img_busqueda.png">
+                <div class="search-inline-form">
+                    <input type="text" class="input-search" placeholder="Buscar destino...">
+
+                    
+                </div>
+            </div>
         </ons-content>
     </ons-page>
 </ons-template>

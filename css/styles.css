@@ -264,3 +264,57 @@ input[type=text], input[type=password] {
 .navigation-bar--android__center {
     margin-left: 14%;
 }
+
+.center .biglogo {
+    width: 38px;
+    display: inline-block;
+}
+
+.center span {
+    display: inline-block;
+    vertical-align: top;
+    font-family: 'SansThin-Light';
+}
+
+.navigation-bar {
+    display:table;
+    width:100%;
+}
+
+.navigation-bar .left, .navigation-bar .center, .navigation-bar .right {
+    display:table-cell;
+    float:none;
+    margin:0;
+    padding:0;
+    vertical-align: middle;
+}
+
+.navigation-bar .center .title {
+    height:42px;
+    margin-left: -20%;
+}
+
+.relative {
+    position:relative;
+}
+
+.search-inline-form {
+    position:absolute;
+    bottom:-20px;
+    left:0;
+    right:0;
+    margin: 10px;
+    padding: 10px;
+    background: #3761ad;
+    padding-top: 3px;
+    padding-left: 14px;
+    padding-right: 14px;
+}
+
+.input-search {
+    font-size: 17px;
+    background:url('../images/icon_lupa_blanco.png') right center no-repeat transparent;
+    border-bottom:solid 1px #fff !important;
+    background-size:28px;
+    color:#fff;
+}
