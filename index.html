@@ -153,11 +153,13 @@
         <ons-content>
             <div class="text-block">
                 <h3>El 25% de las habitaciones</h3>
+
                 <h3>de hotel <span>no llega a ocuparse</span></h3>
             </div>
 
             <div class="text-block blue">
                 <h3><span>Nosotros las ponemos a tu disposición</span></h3>
+
                 <h3>a precios low cost</h3>
             </div>
 
@@ -210,9 +212,11 @@
 
                 <div class="right">
                     <label class="light" style="display:inline-block">Recordar Datos</label>
+
                     <div style="display:inline-block;position:relative;width: 20px;height: 20px;">
                         <div style="position:absolute;left: 0;top: 0;width: 25px;height: 25px;" class="checkbox"></div>
-                        <input style="position:absolute;left: 0;top: 0;width: 25px;height: 25px; opacity: 0;" type="checkbox" onchange="onChangeCheckbox(this)" />
+                        <input style="position:absolute;left: 0;top: 0;width: 25px;height: 25px; opacity: 0;"
+                               type="checkbox" onchange="onChangeCheckbox(this)"/>
                     </div>
                 </div>
 
@@ -261,12 +265,105 @@
 
         <ons-content>
             <div class="relative img-buscador">
-                <img src="images/img_busqueda.png">
-                <div class="search-inline-form">
-                    <input type="text" class="input-search" placeholder="Buscar destino...">
+                <img class="block" src="images/img_busqueda.png">
 
-                    
+                <div class="busqueda-general-content">
+                    <div class="search-inline-form">
+                        <input type="text" class="input-search" placeholder="Buscar destino...">
+                    </div>
                 </div>
+
+                <div class="busqueda-content">
+                    <div class="dates">
+                        <div class="date-selector">
+                            <div class="date-selector-content">
+                                <span class="title">>> ENTRADA</span>
+                                <div class="dateholder">
+                                    <div class="date-text">14.FEB.14</div>
+                                    <input class="input date" type="date" value="14.FEB.14">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="date-selector">
+                            <div class="date-selector-content">
+                                <span class="title right">SALIDA >></span>
+                                <div class="dateholder">
+                                    <div class="date-text left">14.FEB.14</div>
+                                    <input class="input date" type="date" value="14.FEB.14">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dates">
+                        <div class="date-selector">
+                            <div class="selector-content">
+                                <div class="selectholder">
+                                    <div class="select-text left">Nº Habs.</div>
+                                    <select>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="date-selector">
+                            <div class="selector-content">
+                                <div class="selectholder">
+                                    <div class="select-text left">Nº Adultos</div>
+                                    <select>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="date-selector">
+                            <div class="selector-content">
+                                <div class="checkboxholder">
+                                    <div class="checkbox-text left">¿Niños? </div>
+                                    <input type="checkbox" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dates">
+                        <div class="date-selector">
+                            <div class="selector-content">
+                                <div class="select-text left">Edad Niño 1
+                                    <input type="text" class="input inline">
+                                    <div class="spinner">
+                                        <div class="top"></div>
+                                        <div class="bottom"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="date-selector">
+                            <div class="selector-content">
+                                <div class="select-text left">Edad Niño 2
+                                    <input type="text" class="input inline"/>
+                                    <div class="spinner">
+                                        <div class="top"></div>
+                                        <div class="bottom"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </ons-content>
     </ons-page>

@@ -16,6 +16,10 @@
     font-family: 'SansBook';
 }
 
+.page__content {
+    background:#f3f3f3;
+}
+
 img {
     max-width:100%;
     width:100%;
@@ -298,14 +302,25 @@ input[type=text], input[type=password] {
     position:relative;
 }
 
-.search-inline-form {
+.busqueda-general-content {
     position:absolute;
-    bottom:-20px;
+    bottom:-32px;
     left:0;
     right:0;
     margin: 10px;
-    padding: 10px;
+}
+
+.busqueda-content {
+    margin: 10px;
+    margin-top:30px;
+    position:absolute;
+    left:0;
+    right:0;
+}
+
+.search-inline-form {
     background: #3761ad;
+    padding: 10px;
     padding-top: 3px;
     padding-left: 14px;
     padding-right: 14px;
@@ -317,4 +332,147 @@ input[type=text], input[type=password] {
     border-bottom:solid 1px #fff !important;
     background-size:28px;
     color:#fff;
+}
+
+.block {
+    display:block;
+}
+
+.dates {
+    display:table;
+    width:100%;
+}
+
+.date-selector {
+    width:50%;
+    display:table-cell;
+}
+
+.date-selector-content {
+    margin:5px;
+    background:#fff;
+    padding: 8px;
+}
+
+.date-selector .title {
+    font-family: 'SansBook', Arial;
+    font-weight: bold;
+    font-size:12px;
+    color:#264e98;
+    display:block;
+}
+
+.date-selector .title.right {
+    text-align: right;
+}
+
+
+.dateholder {
+    position:relative;
+}
+
+.input.date, .date-text {
+    border:0;
+    display:block;
+    font-size:20px;
+    text-transform: uppercase;
+    width:100%;
+    height:100%;
+}
+
+.input.date {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+}
+
+.date-text {
+    background:url('../images/icon_calendar.png') right center no-repeat transparent;
+    background-size: 20px auto;
+    padding:5px;
+    padding-right:0px;
+    font-size:25px;
+    color:#3761ad;
+}
+
+.date-text.left {
+    padding-right:5px;
+    padding-left:0px;
+    background-position:left center;
+    text-align:right;
+}
+
+.selector-content {
+    background:#fff;
+}
+
+.selectholder, .checkboxholder {
+    position:relative;
+}
+
+.selectholder select, .checkboxholder input[type=checkbox] {
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    width:100%;
+    height:100%;
+    opacity:0;
+}
+
+.selectholder .select-text {
+    background:url('../images/icon_select.png') right center no-repeat transparent;
+    margin-right: 5px;
+    background-size: 15px;
+    padding-top:5px;
+    padding-bottom:5px;
+}
+
+.checkboxholder .checkbox-text {
+    background:url('../images/icon_checkbox_off.png') right center no-repeat transparent;
+    background-size: 20px auto;
+    padding-right:25px;
+}
+
+.select-text, .checkbox-text {
+    font-family: 'SansThin-Light';
+    font-size:18px;
+    color:#363636;
+}
+
+.input.inline {
+    display:inline;
+    border:0;
+    border-bottom:solid 1px #4f4e51;
+    width: 22px;
+    vertical-align: bottom;
+    padding: 1px;
+    text-align: center;
+}
+
+.spinner {
+    display:inline-block;
+    width:10px;
+    vertical-align: bottom;
+    margin-bottom: -12px;
+}
+
+.spinner .top, .spinner .bottom {
+    width:10px;
+    height:10px;
+    display:inline-block;
+}
+
+.spinner .top {
+    background:url('../images/icon_spinner_top.png') right center no-repeat transparent;
+    background-size: 100% auto;
+}
+
+.spinner .bottom {
+    background:url('../images/icon_spinner_bottom.png') right center no-repeat transparent;
+    background-size: 100% auto;
 }

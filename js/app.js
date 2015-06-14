@@ -12,7 +12,8 @@ module.controller('MainNavigatorController', function ($scope) {
         } catch (error) {
         }
 
-        slidingMenu.setMainPage('home.html');
+        //slidingMenu.setMainPage('home.html');
+        slidingMenu.setMainPage('busqueda.html');
         //mainNavigator.pushPage('home.html', {transition:'none'});
     })
 });
