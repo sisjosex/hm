@@ -26,13 +26,8 @@
 <body>
 
 
-<ons-sliding-menu main-page="page.html" menu-page="menu.html" max-slide-distance="260px" type="push" var="slidingMenu">
+<ons-sliding-menu main-page="home.html" menu-page="menu.html" max-slide-distance="260px" type="push" var="slidingMenu">
 </ons-sliding-menu>
-
-<ons-template id="page.html">
-    <ons-navigator var="mainNavigator" ng-controller="MainNavigatorController">
-    </ons-navigator>
-</ons-template>
 
 <ons-template id="menu.html">
     <ons-page modifier="menu-page">
@@ -49,8 +44,7 @@
             <ons-list-item class="menu-item" ng-click="menu.close()">
                 PERFIL
             </ons-list-item>
-
-            <ons-list-item class="menu-item light" onclick="goToIniciarSesion()">
+<ons-list-item class="menu-item light" onclick="goToIniciarSesion()">
                 <ons-icon icon="fa-user"></ons-icon>
                 INICIAR SESÍON
             </ons-list-item>
@@ -74,7 +68,7 @@
                 BUSCADOR GENERAL
             </ons-list-item>
 
-            <ons-list-item class="menu-item light" ng-click="menu.close()">
+            <ons-list-item class="menu-item light"  onclick="goToVacaciones()">
                 <ons-icon icon="fa-home"></ons-icon>
                 VACACIONES Y ESCAPADAS
             </ons-list-item>
@@ -175,14 +169,14 @@
                     <span class="text">Buscador<br>
                     Último Minuto</span>
                 </div>
-                <div class="button magenta">
+                <div class="button magenta" onclick="goToBuscador()">
                     <div class="icon">
                         <img src="images/icon_buscador_general.png">
                     </div>
                     <span class="text">Buscador<br>
                     General</span>
                 </div>
-                <div class="button orange">
+                <div class="button orange" onclick="goToVacaciones()">
                     <div class="icon">
                         <img src="images/icon_paquetes_vacacionales.png">
                     </div>
@@ -236,6 +230,7 @@
 </ons-template>
 
 <ons-template id="busqueda.html">
+    <ons-navigator var="mainNavigator" ng-controller="BusquedaController">
     <ons-page ng-controller="BusquedaController">
 
         <ons-toolbar>
@@ -280,7 +275,7 @@
                                 <span class="title">>> ENTRADA</span>
                                 <div class="dateholder">
                                     <div class="date-text">14.FEB.14</div>
-                                    <input class="input date" type="date" value="14.FEB.14">
+                                    <input class="input date" type="date" value="14.FEB.14" onchange="dateChange(this)">
                                 </div>
                             </div>
                         </div>
@@ -290,18 +285,18 @@
                                 <span class="title right">SALIDA >></span>
                                 <div class="dateholder">
                                     <div class="date-text left">14.FEB.14</div>
-                                    <input class="input date" type="date" value="14.FEB.14">
+                                    <input class="input date" type="date" value="14.FEB.14" onchange="dateChange(this)">
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="dates">
+                    <div class="dates margin-top-10">
                         <div class="date-selector">
                             <div class="selector-content">
                                 <div class="selectholder">
                                     <div class="select-text left">Nº Habs.</div>
-                                    <select>
+                                    <select onchange="selectChange(this)">
                                         <option value="1">1</option>
                                         <option value="2">2</option>
                                         <option value="3">3</option>
@@ -316,7 +311,7 @@
                             <div class="selector-content">
                                 <div class="selectholder">
                                     <div class="select-text left">Nº Adultos</div>
-                                    <select>
+                                    <select onchange="selectChange(this)">
                                         <option value="1">1</option>
                                         <option value="2">2</option>
                                         <option value="3">3</option>
@@ -331,20 +326,20 @@
                             <div class="selector-content">
                                 <div class="checkboxholder">
                                     <div class="checkbox-text left">¿Niños? </div>
-                                    <input type="checkbox" />
+                                    <input type="checkbox" onclick="checkboxChange(this)" />
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="dates">
+                    <div class="dates margin-top-10">
                         <div class="date-selector">
                             <div class="selector-content">
                                 <div class="select-text left">Edad Niño 1
                                     <input type="text" class="input inline">
                                     <div class="spinner">
-                                        <div class="top"></div>
-                                        <div class="bottom"></div>
+                                        <div class="top" onchange="spinnerChange(this, 'decrease')"></div>
+                                        <div class="bottom" onchange="spinnerChange(this, 'increase')"></div>
                                     </div>
                                 </div>
                             </div>
@@ -355,16 +350,301 @@
                                 <div class="select-text left">Edad Niño 2
                                     <input type="text" class="input inline"/>
                                     <div class="spinner">
-                                        <div class="top"></div>
-                                        <div class="bottom"></div>
+                                        <div class="top" onclick="spinnerChange(this, 'decrease')"></div>
+                                        <div class="bottom" onclick="spinnerChange(this, 'increase')"></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+                    <div class="footer-form margin-top-10">
+                        <div class="button button2" onclick="mainNavigator.pushPage('resultados.html');">BUSCAR</div>
+                    </div>
                 </div>
 
             </div>
+        </ons-content>
+    </ons-page>
+    </ons-navigator>
+</ons-template>
+
+
+<ons-template id="resultados.html">
+    <ons-page ng-controller="ResultadosController">
+
+        <ons-toolbar>
+            <div class="left">
+                <ons-toolbar-button class="separators-right" onclick="slidingMenu.toggle()">
+                    <img class="header-icon" src="images/icon_menu.png">
+                </ons-toolbar-button>
+            </div>
+
+            <div class="center">
+                <div class="title">
+                    <img class="biglogo responsive" src="images/logo_big.png">
+                    <span>RESULTADOS</span>
+                </div>
+            </div>
+
+            <div class="right">
+                <ons-toolbar-button class="separators-left" onclick="slidingMenu.toggle()">
+                    <img class="header-icon" src="images/icon_phone.png">
+                </ons-toolbar-button>
+
+                <ons-toolbar-button class="separators-left" onclick="slidingMenu.toggle()">
+                    <img class="header-icon" src="images/icon_map.png">
+                </ons-toolbar-button>
+            </div>
+        </ons-toolbar>
+
+        <ons-content>
+            <ons-list class="resultados-list">
+                <ons-list-item modifier="chevron" class="list-item-container">
+                    <ons-row>
+                        <ons-col width="130px">
+                            <img src="images/img_resultados.png" class="thumbnail">
+                        </ons-col>
+                        <ons-col class="padding-5">
+                            <div class="location">
+                                HOTEL 4*
+                            </div>
+                            <div class="name">
+                                Hotel Miguel Angel
+                            </div>
+                            <div class="desc">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget faucibus tellus. Duis eleifend augue consequat nisl pulvinar dapibus.
+                                <span class="list-link">Leer más ></span>
+                            </div>
+                        </ons-col>
+                        <ons-col class="arrow-container" width="20px"></ons-col>
+                    </ons-row>
+                </ons-list-item>
+
+                <ons-list-item modifier="chevron" class="list-item-container">
+                    <ons-row>
+                        <ons-col width="130px">
+                            <img src="images/img_resultados.png" class="thumbnail">
+                        </ons-col>
+                        <ons-col class="padding-5">
+                            <div class="location">
+                                HOTEL 4*
+                            </div>
+                            <div class="name">
+                                Hotel Miguel Angel
+                            </div>
+                            <div class="desc">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget faucibus tellus. Duis eleifend augue consequat nisl pulvinar dapibus.
+                                <span class="list-link">Leer más ></span>
+                            </div>
+                        </ons-col>
+                        <ons-col class="arrow-container" width="20px"></ons-col>
+                    </ons-row>
+                </ons-list-item>
+
+                <ons-list-item modifier="chevron" class="list-item-container">
+                    <ons-row>
+                        <ons-col width="130px">
+                            <img src="images/img_resultados.png" class="thumbnail">
+                        </ons-col>
+                        <ons-col class="padding-5">
+                            <div class="location">
+                                HOTEL 4*
+                            </div>
+                            <div class="name">
+                                Hotel Miguel Angel
+                            </div>
+                            <div class="desc">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget faucibus tellus. Duis eleifend augue consequat nisl pulvinar dapibus.
+                                <span class="list-link">Leer más ></span>
+                            </div>
+                        </ons-col>
+                        <ons-col class="arrow-container" width="20px"></ons-col>
+                    </ons-row>
+                </ons-list-item>
+
+                <ons-list-item modifier="chevron" class="list-item-container">
+                    <ons-row>
+                        <ons-col width="130px">
+                            <img src="images/img_resultados.png" class="thumbnail">
+                        </ons-col>
+                        <ons-col class="padding-5">
+                            <div class="location">
+                                HOTEL 4*
+                            </div>
+                            <div class="name">
+                                Hotel Miguel Angel
+                            </div>
+                            <div class="desc">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget faucibus tellus. Duis eleifend augue consequat nisl pulvinar dapibus.
+                                <span class="list-link">Leer más ></span>
+                            </div>
+                        </ons-col>
+                        <ons-col class="arrow-container" width="20px"></ons-col>
+                    </ons-row>
+                </ons-list-item>
+
+                <ons-list-item modifier="chevron" class="list-item-container">
+                    <ons-row>
+                        <ons-col width="130px">
+                            <img src="images/img_resultados.png" class="thumbnail">
+                        </ons-col>
+                        <ons-col class="padding-5">
+                            <div class="location">
+                                HOTEL 4*
+                            </div>
+                            <div class="name">
+                                Hotel Miguel Angel
+                            </div>
+                            <div class="desc">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget faucibus tellus. Duis eleifend augue consequat nisl pulvinar dapibus.
+                                <span class="list-link">Leer más ></span>
+                            </div>
+                        </ons-col>
+                        <ons-col class="arrow-container" width="20px"></ons-col>
+                    </ons-row>
+                </ons-list-item>
+            </ons-list>
+        </ons-content>
+    </ons-page>
+</ons-template>
+
+
+<ons-template id="vacaciones.html">
+    <ons-page ng-controller="VacacionesController">
+
+        <ons-toolbar>
+            <div class="left">
+                <ons-toolbar-button class="separators-right" onclick="slidingMenu.toggle()">
+                    <img class="header-icon" src="images/icon_menu.png">
+                </ons-toolbar-button>
+            </div>
+
+            <div class="center">
+                <div class="title">
+                    <img class="biglogo responsive" src="images/logo_big.png">
+                    <span>PACKS VACACIONALES</span>
+                </div>
+            </div>
+
+            <div class="right">
+                <ons-toolbar-button class="separators-left" onclick="slidingMenu.toggle()">
+                    <img class="header-icon" src="images/icon_phone.png">
+                </ons-toolbar-button>
+
+                <ons-toolbar-button class="separators-left" onclick="slidingMenu.toggle()">
+                    <img class="header-icon" src="images/icon_map.png">
+                </ons-toolbar-button>
+            </div>
+        </ons-toolbar>
+
+        <ons-content>
+            <ons-list class="resultados-list">
+                <ons-list-item modifier="chevron" class="list-item-container">
+                    <ons-row>
+                        <ons-col width="130px">
+                            <img src="images/img_resultados.png" class="thumbnail">
+                        </ons-col>
+                        <ons-col class="padding-5">
+                            <div class="location">
+                                HOTEL 4*
+                            </div>
+                            <div class="name">
+                                Zona los cigarrales
+                            </div>
+                            <div class="desc">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget faucibus tellus. Duis eleifend augue consequat nisl pulvinar dapibus.
+                                <span class="list-link">Leer más ></span>
+                            </div>
+                        </ons-col>
+                        <ons-col class="arrow-container" width="20px"></ons-col>
+                    </ons-row>
+                </ons-list-item>
+
+                <ons-list-item modifier="chevron" class="list-item-container">
+                    <ons-row>
+                        <ons-col width="130px">
+                            <img src="images/img_resultados.png" class="thumbnail">
+                        </ons-col>
+                        <ons-col class="padding-5">
+                            <div class="location">
+                                HOTEL 4*
+                            </div>
+                            <div class="name">
+                                Zona los cigarrales
+                            </div>
+                            <div class="desc">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget faucibus tellus. Duis eleifend augue consequat nisl pulvinar dapibus.
+                                <span class="list-link">Leer más ></span>
+                            </div>
+                        </ons-col>
+                        <ons-col class="arrow-container" width="20px"></ons-col>
+                    </ons-row>
+                </ons-list-item>
+
+                <ons-list-item modifier="chevron" class="list-item-container">
+                    <ons-row>
+                        <ons-col width="130px">
+                            <img src="images/img_resultados.png" class="thumbnail">
+                        </ons-col>
+                        <ons-col class="padding-5">
+                            <div class="location">
+                                HOTEL 4*
+                            </div>
+                            <div class="name">
+                                Zona los cigarrales
+                            </div>
+                            <div class="desc">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget faucibus tellus. Duis eleifend augue consequat nisl pulvinar dapibus.
+                                <span class="list-link">Leer más ></span>
+                            </div>
+                        </ons-col>
+                        <ons-col class="arrow-container" width="20px"></ons-col>
+                    </ons-row>
+                </ons-list-item>
+
+                <ons-list-item modifier="chevron" class="list-item-container">
+                    <ons-row>
+                        <ons-col width="130px">
+                            <img src="images/img_resultados.png" class="thumbnail">
+                        </ons-col>
+                        <ons-col class="padding-5">
+                            <div class="location">
+                                HOTEL 4*
+                            </div>
+                            <div class="name">
+                                Zona los cigarrales
+                            </div>
+                            <div class="desc">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget faucibus tellus. Duis eleifend augue consequat nisl pulvinar dapibus.
+                                <span class="list-link">Leer más ></span>
+                            </div>
+                        </ons-col>
+                        <ons-col class="arrow-container" width="20px"></ons-col>
+                    </ons-row>
+                </ons-list-item>
+
+                <ons-list-item modifier="chevron" class="list-item-container">
+                    <ons-row>
+                        <ons-col width="130px">
+                            <img src="images/img_resultados.png" class="thumbnail">
+                        </ons-col>
+                        <ons-col class="padding-5">
+                            <div class="location">
+                                HOTEL 4*
+                            </div>
+                            <div class="name">
+                                Zona los cigarrales
+                            </div>
+                            <div class="desc">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget faucibus tellus. Duis eleifend augue consequat nisl pulvinar dapibus.
+                                <span class="list-link">Leer más ></span>
+                            </div>
+                        </ons-col>
+                        <ons-col class="arrow-container" width="20px"></ons-col>
+                    </ons-row>
+                </ons-list-item>
+            </ons-list>
         </ons-content>
     </ons-page>
 </ons-template>
