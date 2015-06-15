@@ -22,11 +22,28 @@
     <script src="lib/onsen/js/onsenui.js"></script>
     <script src="js/app.js"></script>
 
+    <script>
+
+        // load google map
+        function loadScripts() {
+            var script = document.createElement('script');
+            script.type = 'text/javascript';
+            script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&' +
+            'callback=initializeMap';
+            document.body.appendChild(script);
+        }
+
+        // caller after google map is loaded
+        function initializeMap() {
+
+        }
+
+    </script>
 </head>
-<body>
+<body onload="loadScripts()">
 
 
-<ons-sliding-menu main-page="home.html" menu-page="menu.html" max-slide-distance="260px" type="push" var="slidingMenu">
+<ons-sliding-menu main-page="resultado_busqueda.html" menu-page="menu.html" max-slide-distance="260px" type="push" var="slidingMenu">
 </ons-sliding-menu>
 
 <ons-template id="menu.html">
@@ -336,7 +353,7 @@
                         <div class="date-selector">
                             <div class="selector-content">
                                 <div class="select-text left">Edad Niño 1
-                                    <input type="text" class="input inline">
+                                    <input type="text" class="input inline" />
                                     <div class="spinner">
                                         <div class="top" onchange="spinnerChange(this, 'decrease')"></div>
                                         <div class="bottom" onchange="spinnerChange(this, 'increase')"></div>
@@ -348,7 +365,7 @@
                         <div class="date-selector">
                             <div class="selector-content">
                                 <div class="select-text left">Edad Niño 2
-                                    <input type="text" class="input inline"/>
+                                    <input type="text" class="input inline" />
                                     <div class="spinner">
                                         <div class="top" onclick="spinnerChange(this, 'decrease')"></div>
                                         <div class="bottom" onclick="spinnerChange(this, 'increase')"></div>
@@ -400,7 +417,7 @@
 
         <ons-content>
             <ons-list class="resultados-list">
-                <ons-list-item modifier="chevron" class="list-item-container">
+                <ons-list-item modifier="chevron" class="list-item-container" onclick="goToResultado(this)">
                     <ons-row>
                         <ons-col width="130px">
                             <img src="images/img_resultados.png" class="thumbnail">
@@ -421,7 +438,7 @@
                     </ons-row>
                 </ons-list-item>
 
-                <ons-list-item modifier="chevron" class="list-item-container">
+                <ons-list-item modifier="chevron" class="list-item-container" onclick="goToResultado(this)">
                     <ons-row>
                         <ons-col width="130px">
                             <img src="images/img_resultados.png" class="thumbnail">
@@ -442,7 +459,7 @@
                     </ons-row>
                 </ons-list-item>
 
-                <ons-list-item modifier="chevron" class="list-item-container">
+                <ons-list-item modifier="chevron" class="list-item-container" onclick="goToResultado(this)">
                     <ons-row>
                         <ons-col width="130px">
                             <img src="images/img_resultados.png" class="thumbnail">
@@ -463,7 +480,7 @@
                     </ons-row>
                 </ons-list-item>
 
-                <ons-list-item modifier="chevron" class="list-item-container">
+                <ons-list-item modifier="chevron" class="list-item-container" onclick="goToResultado(this)">
                     <ons-row>
                         <ons-col width="130px">
                             <img src="images/img_resultados.png" class="thumbnail">
@@ -484,7 +501,7 @@
                     </ons-row>
                 </ons-list-item>
 
-                <ons-list-item modifier="chevron" class="list-item-container">
+                <ons-list-item modifier="chevron" class="list-item-container" onclick="goToResultado(this)">
                     <ons-row>
                         <ons-col width="130px">
                             <img src="images/img_resultados.png" class="thumbnail">
@@ -505,6 +522,106 @@
                     </ons-row>
                 </ons-list-item>
             </ons-list>
+        </ons-content>
+    </ons-page>
+</ons-template>
+
+
+<ons-template id="resultado_busqueda.html">
+    <ons-page ng-controller="ResultadoBusquedaController">
+
+        <ons-toolbar>
+            <div class="left">
+                <ons-toolbar-button class="separators-right" onclick="slidingMenu.toggle()">
+                    <img class="header-icon" src="images/icon_menu.png">
+                </ons-toolbar-button>
+            </div>
+
+            <div class="center">
+                <div class="title">
+                    <img class="biglogo responsive" src="images/logo_big.png">
+                    <span>Hotel Miguel Angel</span>
+                </div>
+            </div>
+
+            <div class="right">
+                <ons-toolbar-button class="separators-left" onclick="slidingMenu.toggle()">
+                    <img class="header-icon" src="images/icon_phone.png">
+                </ons-toolbar-button>
+
+                <ons-toolbar-button class="separators-left" onclick="slidingMenu.toggle()">
+                    <img class="header-icon" src="images/icon_map.png">
+                </ons-toolbar-button>
+            </div>
+        </ons-toolbar>
+
+        <ons-content>
+            <div class="map-container">
+                <div id="map" style="height:150px"></div>
+                <div class="tabs map-tabs">
+                    <div class="button tab selected"><span class="tab-text">VER EN MAPA</span></div>
+                    <div class="button tab"><span class="tab-text">VER FOTOS</span></div>
+                </div>
+            </div>
+
+            <ons-row>
+                <ons-col class="padding-5">
+                    <div class="location">
+                        HOTEL 4*
+                    </div>
+                    <div class="name">
+                        Zona los cigarrales
+                    </div>
+                    <div class="desc">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget faucibus tellus. Duis eleifend augue consequat nisl pulvinar dapibus.
+                    </div>
+                </ons-col>
+                <ons-col class="price-container" width="80px">
+                    <div class="price1">72€</div>
+                    <div class="price2">72<span class="price-few">€</span></div>
+                </ons-col>
+            </ons-row>
+
+            <ons-row class="top5">
+                <ons-col class="collapse-title">
+                    <div class="title">Editar Fechas</div>
+                </ons-col>
+
+                <ons-col width="35px" class="collapse-container">
+                    <img class="collapse-icon" src="images/icon_collapse.png" />
+                </ons-col>
+            </ons-row>
+
+            <ons-row class="top5">
+                <ons-col class="collapse-title">
+                    <div class="title">Número de Habitaciones</div>
+                </ons-col>
+
+                <ons-col width="35px" class="collapse-container">
+                    <img class="collapse-icon" src="images/icon_collapse.png" />
+                </ons-col>
+            </ons-row>
+
+            <ons-row class="top5">
+                <ons-col class="collapse-title">
+                    <div class="title">Tipo de Habitación</div>
+                </ons-col>
+
+                <ons-col width="35px" class="collapse-container">
+                    <img class="collapse-icon" src="images/icon_collapse.png" />
+                </ons-col>
+            </ons-row>
+
+            <ons-row class="top5">
+                <ons-col>
+                    <div class="button button3">ATRAS</div>
+                </ons-col>
+
+                <ons-col>
+                    <div class="button button3">CONTINUAR</div>
+                </ons-col>
+            </ons-row>
+
         </ons-content>
     </ons-page>
 </ons-template>

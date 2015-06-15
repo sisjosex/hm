@@ -569,3 +569,123 @@ input[type=text], input[type=password] {
     background:#3761ad;
     margin-right: 5px;
 }
+
+.tabs {
+    display:table;
+    width:100%;
+    border-bottom: solid 1px #3761ad;
+    margin:0;
+    padding:0;
+}
+
+.tab {
+    color:#fff;
+    font-family: 'SansBook';
+    display: table-cell;
+    background: transparent;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-right:5px;
+}
+
+.tab-text {
+    color:#fff;
+    background:#cccccc;
+    /*margin-left:5px;
+    margin-right:5px;*/
+    display:block;
+    width:100%;
+    text-align: center;
+}
+
+.tab.selected, .tab.selected .tab-text {
+    color:#3761ad;
+}
+
+.map-container {
+    position:relative;
+}
+
+.map-tabs {
+    position:absolute;
+    bottom:0;
+    left:0;
+    right:0;
+}
+
+.price-container {
+    background:url('../images/fondo_precio.png') 0 0 no-repeat transparent;
+    background-size:100% 80px;
+}
+
+.price1 {
+    font-family: 'SansBook';
+    text-transform: uppercase;
+    color:#fff;
+    text-align: right;
+    margin-top:5px;
+    font-size:22px;
+}
+
+.price2 {
+    font-family: 'SansThin-Light';
+    text-decoration: line-through;
+    color:#fff;
+    text-align: right;
+    margin-top:5px;
+    font-size:18px;
+}
+
+.price-few {
+    font-size:14px;
+}
+
+.collapse-container {
+    padding:10px;
+    background:#3761ad;
+    margin-right:5px;
+}
+
+.collapse-icon {
+    width:15px;
+}
+
+.collapse-title {
+    background:#cccccc;
+    margin-left:5px;
+}
+
+.collapse-title .title {
+    font-family: 'SansThin-Light';
+    font-size:16px;
+    color:#3761ad;
+    padding:6px;
+    border-bottom:1px solid #3761ad;
+}
+
+.margin5 {
+    margin-left:5px;
+    margin-right:5px;
+}
+
+.top5 {
+    margin-top:5px;
+}
+
+.button3 {
+    background:#fff;
+    border:1px solid #3c65af;
+    display:block;
+    color:#3761ad;
+    margin-left:5px;
+    margin-right:5px;
+    margin-bottom:10px;
+    text-align: center;
+    font-family: 'SansBook';
+    font-size:16px;
+    padding-top:5px;
+    padding-bottom:5px;
+    line-height: 24px;
+}
+
