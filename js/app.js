@@ -70,6 +70,14 @@ module.controller('VacacionesController', function ($scope) {
     })
 });
 
+var UltimoMinutoPaisController;
+module.controller('UltimoMinutoPaisController', function ($scope) {
+    ons.ready(function () {
+
+
+    })
+});
+
 var ResultadoBusquedaController;
 module.controller('ResultadoBusquedaController', function ($scope) {
     ons.ready(function () {
@@ -155,6 +163,12 @@ function goToVacaciones() {
     slidingMenu.close();
 
     slidingMenu.setMainPage('vacaciones.html', {transition:'slide'});
+}
+
+function goToUltimoMinuto() {
+    slidingMenu.close();
+
+    slidingMenu.setMainPage('ultimo_minuto.html', {transition:'slide'});
 }
 
 function onChangeCheckbox(element) {

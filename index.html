@@ -43,7 +43,7 @@
 <body onload="loadScripts()">
 
 
-<ons-sliding-menu main-page="resultado_busqueda.html" menu-page="menu.html" max-slide-distance="260px" type="push" var="slidingMenu">
+<ons-sliding-menu main-page="ultimo_minuto.html" menu-page="menu.html" max-slide-distance="260px" type="push" var="slidingMenu">
 </ons-sliding-menu>
 
 <ons-template id="menu.html">
@@ -75,7 +75,7 @@
                 INICIO
             </ons-list-item>
 
-            <ons-list-item class="menu-item light" ng-click="menu.close()">
+            <ons-list-item class="menu-item light" onclick="goToUltimoMinuto()">
                 <ons-icon icon="fa-home"></ons-icon>
                 DESTINOS ÚLTIMO MINUTO
             </ons-list-item>
@@ -179,7 +179,7 @@
             </div>
 
             <div class="home-footer">
-                <div class="button green">
+                <div class="button green" onclick="goToUltimoMinuto()">
                     <div class="icon">
                         <img src="images/icon_ultimo_minuto.png">
                     </div>
@@ -761,6 +761,105 @@
                     </ons-row>
                 </ons-list-item>
             </ons-list>
+        </ons-content>
+    </ons-page>
+</ons-template>
+
+
+<ons-template id="ultimo_minuto.html">
+    <ons-page ng-controller="UltimoMinutoPaisController">
+
+        <ons-toolbar>
+            <div class="left">
+                <ons-toolbar-button class="separators-right" onclick="slidingMenu.toggle()">
+                    <img class="header-icon" src="images/icon_menu.png">
+                </ons-toolbar-button>
+            </div>
+
+            <div class="center">
+                <div class="title">
+                    <img class="biglogo responsive" src="images/logo_big.png">
+                    <span>ULTIMO MINUTO</span>
+                </div>
+            </div>
+
+            <div class="right">
+                <ons-toolbar-button class="separators-left" onclick="slidingMenu.toggle()">
+                    <img class="header-icon" src="images/icon_buscador_general.png">
+                </ons-toolbar-button>
+
+                <ons-toolbar-button class="separators-left" onclick="slidingMenu.toggle()">
+                    <img class="header-icon" src="images/icon_map.png">
+                </ons-toolbar-button>
+            </div>
+        </ons-toolbar>
+
+        <ons-content>
+
+            <ons-row class="top5">
+                <ons-col class="collapse-title2">
+                    <div class="title">ESPAÑA</div>
+                </ons-col>
+            </ons-row>
+
+            <div class="group">
+                <ons-row class="list-item2">
+                    <ons-col class="title">
+                        <div class="title2">
+                            Madrid
+                        </div>
+                    </ons-col>
+                </ons-row>
+
+                <ons-row class="list-item2">
+                    <ons-col class="title">
+                        <div class="title2">
+                            Madrid
+                        </div>
+                    </ons-col>
+                </ons-row>
+
+                <ons-row class="list-item2">
+                    <ons-col class="title">
+                        <div class="title2">
+                            Madrid
+                        </div>
+                    </ons-col>
+                </ons-row>
+
+                <ons-row class="list-item2">
+                    <ons-col class="title">
+                        <div class="title2">
+                            Madrid
+                        </div>
+                    </ons-col>
+                </ons-row>
+            </div>
+
+            <div class="home-footer">
+                <div class="button green" onclick="goToUltimoMinuto()">
+                    <div class="icon">
+                        <img src="images/icon_ultimo_minuto.png">
+                    </div>
+                    <span class="text">Buscador<br>
+                    Último Minuto</span>
+                </div>
+                <div class="button magenta" onclick="goToBuscador()">
+                    <div class="icon">
+                        <img src="images/icon_buscador_general.png">
+                    </div>
+                    <span class="text">Buscador<br>
+                    General</span>
+                </div>
+                <div class="button orange" onclick="goToVacaciones()">
+                    <div class="icon">
+                        <img src="images/icon_paquetes_vacacionales.png">
+                    </div>
+                    <span class="text">Paquetes<br>
+                    Vacacionales</span>
+                </div>
+            </div>
+
         </ons-content>
     </ons-page>
 </ons-template>
