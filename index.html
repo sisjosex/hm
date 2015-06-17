@@ -43,7 +43,7 @@
 <body onload="loadScripts()">
 
 
-<ons-sliding-menu main-page="ultimo_minuto_ciudad.html" menu-page="menu.html" max-slide-distance="260px" type="push"
+<ons-sliding-menu main-page="home.html" menu-page="menu.html" max-slide-distance="260px" type="push"
                   var="slidingMenu">
 </ons-sliding-menu>
 
@@ -787,6 +787,7 @@
 
 
 <ons-template id="ultimo_minuto.html">
+    <ons-navigator var="mainNavigator" ng-controller="BusquedaController">
     <ons-page ng-controller="UltimoMinutoPaisController">
 
         <ons-toolbar>
@@ -816,7 +817,7 @@
 
         <ons-content>
 
-            <ons-row class="top5">
+            <ons-row class="top5" onclick="goToUltimoMinutoCiudad()">
                 <ons-col class="collapse-title2">
                     <div class="title">ESPAÑA</div>
                 </ons-col>
@@ -938,6 +939,7 @@
 
         </ons-content>
     </ons-page>
+    </ons-navigator>
 </ons-template>
 
 <ons-template id="ultimo_minuto_ciudad.html">

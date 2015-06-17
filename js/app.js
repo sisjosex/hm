@@ -182,7 +182,7 @@ function goToUltimoMinuto() {
 function goToUltimoMinutoCiudad() {
     slidingMenu.close();
 
-    slidingMenu.setMainPage('ultimo_minuto_ciudad.html', {transition:'slide'});
+    mainNavigator.pushPage('ultimo_minuto_ciudad.html', {transition:'slide'});
 }
 
 function onChangeCheckbox(element) {
