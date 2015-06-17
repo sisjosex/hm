@@ -187,7 +187,7 @@ h3 span {
 .home-footer {
     display: table;
     width: 100%;
-    position: absolute;
+    position: fixed;
     bottom: 0;
 }
 
@@ -732,4 +732,8 @@ input[type=text], input[type=password] {
     color:#3761ad;
     background:url('../images/icon_plus.png') right center no-repeat transparent;
     background-size:10px auto;
+}
+
+.width-footer {
+    padding-bottom:118px;
 }
