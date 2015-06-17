@@ -626,6 +626,7 @@ input[type=text], input[type=password] {
     text-align: right;
     margin-top:5px;
     font-size:22px;
+    margin-right:3px;
 }
 
 .price2 {
@@ -635,10 +636,13 @@ input[type=text], input[type=password] {
     text-align: right;
     margin-top:5px;
     font-size:18px;
+    margin-right:3px;
 }
 
 .price-few {
+    font-family: 'SansThin-Light';
     font-size:14px;
+    color:#fff;
 }
 
 .collapse-container {
