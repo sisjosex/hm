@@ -78,6 +78,14 @@ module.controller('UltimoMinutoPaisController', function ($scope) {
     })
 });
 
+var UltimoMinutoCiudadController;
+module.controller('UltimoMinutoCiudadController', function ($scope) {
+    ons.ready(function () {
+
+
+    })
+});
+
 var ResultadoBusquedaController;
 module.controller('ResultadoBusquedaController', function ($scope) {
     ons.ready(function () {
@@ -169,6 +177,12 @@ function goToUltimoMinuto() {
     slidingMenu.close();
 
     slidingMenu.setMainPage('ultimo_minuto.html', {transition:'slide'});
+}
+
+function goToUltimoMinutoCiudad() {
+    slidingMenu.close();
+
+    slidingMenu.setMainPage('ultimo_minuto_ciudad.html', {transition:'slide'});
 }
 
 function onChangeCheckbox(element) {

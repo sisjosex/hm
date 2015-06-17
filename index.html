@@ -43,7 +43,8 @@
 <body onload="loadScripts()">
 
 
-<ons-sliding-menu main-page="ultimo_minuto.html" menu-page="menu.html" max-slide-distance="260px" type="push" var="slidingMenu">
+<ons-sliding-menu main-page="ultimo_minuto_ciudad.html" menu-page="menu.html" max-slide-distance="260px" type="push"
+                  var="slidingMenu">
 </ons-sliding-menu>
 
 <ons-template id="menu.html">
@@ -61,7 +62,7 @@
             <ons-list-item class="menu-item" ng-click="menu.close()">
                 PERFIL
             </ons-list-item>
-<ons-list-item class="menu-item light" onclick="goToIniciarSesion()">
+            <ons-list-item class="menu-item light" onclick="goToIniciarSesion()">
                 <ons-icon icon="fa-user"></ons-icon>
                 INICIAR SESÍON
             </ons-list-item>
@@ -85,7 +86,7 @@
                 BUSCADOR GENERAL
             </ons-list-item>
 
-            <ons-list-item class="menu-item light"  onclick="goToVacaciones()">
+            <ons-list-item class="menu-item light" onclick="goToVacaciones()">
                 <ons-icon icon="fa-home"></ons-icon>
                 VACACIONES Y ESCAPADAS
             </ons-list-item>
@@ -248,141 +249,148 @@
 
 <ons-template id="busqueda.html">
     <ons-navigator var="mainNavigator" ng-controller="BusquedaController">
-    <ons-page ng-controller="BusquedaController">
+        <ons-page ng-controller="BusquedaController">
 
-        <ons-toolbar>
-            <div class="left">
-                <ons-toolbar-button class="separators-right" onclick="slidingMenu.toggle()">
-                    <img class="header-icon" src="images/icon_menu.png">
-                </ons-toolbar-button>
-            </div>
-
-            <div class="center">
-                <div class="title">
-                    <img class="biglogo responsive" src="images/logo_big.png">
-                    <span>BUSC. GENERAL</span>
+            <ons-toolbar>
+                <div class="left">
+                    <ons-toolbar-button class="separators-right" onclick="slidingMenu.toggle()">
+                        <img class="header-icon" src="images/icon_menu.png">
+                    </ons-toolbar-button>
                 </div>
-            </div>
 
-            <div class="right">
-                <ons-toolbar-button class="separators-left" onclick="slidingMenu.toggle()">
-                    <img class="header-icon" src="images/icon_lupa.png">
-                </ons-toolbar-button>
-
-                <ons-toolbar-button class="separators-left" onclick="slidingMenu.toggle()">
-                    <img class="header-icon" src="images/icon_phone.png">
-                </ons-toolbar-button>
-            </div>
-        </ons-toolbar>
-
-        <ons-content>
-            <div class="relative img-buscador">
-                <img class="block" src="images/img_busqueda.png">
-
-                <div class="busqueda-general-content">
-                    <div class="search-inline-form">
-                        <input type="text" class="input-search" placeholder="Buscar destino...">
+                <div class="center">
+                    <div class="title">
+                        <img class="biglogo responsive" src="images/logo_big.png">
+                        <span>BUSC. GENERAL</span>
                     </div>
                 </div>
 
-                <div class="busqueda-content">
-                    <div class="dates">
-                        <div class="date-selector">
-                            <div class="date-selector-content">
-                                <span class="title">>> ENTRADA</span>
-                                <div class="dateholder">
-                                    <div class="date-text">14.FEB.14</div>
-                                    <input class="input date" type="date" value="14.FEB.14" onchange="dateChange(this)">
-                                </div>
-                            </div>
-                        </div>
+                <div class="right">
+                    <ons-toolbar-button class="separators-left" onclick="slidingMenu.toggle()">
+                        <img class="header-icon" src="images/icon_lupa.png">
+                    </ons-toolbar-button>
 
-                        <div class="date-selector">
-                            <div class="date-selector-content">
-                                <span class="title right">SALIDA >></span>
-                                <div class="dateholder">
-                                    <div class="date-text left">14.FEB.14</div>
-                                    <input class="input date" type="date" value="14.FEB.14" onchange="dateChange(this)">
-                                </div>
-                            </div>
+                    <ons-toolbar-button class="separators-left" onclick="slidingMenu.toggle()">
+                        <img class="header-icon" src="images/icon_phone.png">
+                    </ons-toolbar-button>
+                </div>
+            </ons-toolbar>
+
+            <ons-content>
+                <div class="relative img-buscador">
+                    <img class="block" src="images/img_busqueda.png">
+
+                    <div class="busqueda-general-content">
+                        <div class="search-inline-form">
+                            <input type="text" class="input-search" placeholder="Buscar destino...">
                         </div>
                     </div>
 
-                    <div class="dates margin-top-10">
-                        <div class="date-selector">
-                            <div class="selector-content">
-                                <div class="selectholder">
-                                    <div class="select-text left">Nº Habs.</div>
-                                    <select onchange="selectChange(this)">
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5</option>
-                                    </select>
+                    <div class="busqueda-content">
+                        <div class="dates">
+                            <div class="date-selector">
+                                <div class="date-selector-content">
+                                    <span class="title">>> ENTRADA</span>
+
+                                    <div class="dateholder">
+                                        <div class="date-text">14.FEB.14</div>
+                                        <input class="input date" type="date" value="14.FEB.14"
+                                               onchange="dateChange(this)">
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="date-selector">
-                            <div class="selector-content">
-                                <div class="selectholder">
-                                    <div class="select-text left">Nº Adultos</div>
-                                    <select onchange="selectChange(this)">
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
+                            <div class="date-selector">
+                                <div class="date-selector-content">
+                                    <span class="title right">SALIDA >></span>
 
-                        <div class="date-selector">
-                            <div class="selector-content">
-                                <div class="checkboxholder">
-                                    <div class="checkbox-text left">¿Niños? </div>
-                                    <input type="checkbox" onclick="checkboxChange(this)" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="dates margin-top-10">
-                        <div class="date-selector">
-                            <div class="selector-content">
-                                <div class="select-text left">Edad Niño 1
-                                    <input type="text" class="input inline" />
-                                    <div class="spinner">
-                                        <div class="top" onchange="spinnerChange(this, 'decrease')"></div>
-                                        <div class="bottom" onchange="spinnerChange(this, 'increase')"></div>
+                                    <div class="dateholder">
+                                        <div class="date-text left">14.FEB.14</div>
+                                        <input class="input date" type="date" value="14.FEB.14"
+                                               onchange="dateChange(this)">
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="date-selector">
-                            <div class="selector-content">
-                                <div class="select-text left">Edad Niño 2
-                                    <input type="text" class="input inline" />
-                                    <div class="spinner">
-                                        <div class="top" onclick="spinnerChange(this, 'decrease')"></div>
-                                        <div class="bottom" onclick="spinnerChange(this, 'increase')"></div>
+                        <div class="dates margin-top-10">
+                            <div class="date-selector">
+                                <div class="selector-content">
+                                    <div class="selectholder">
+                                        <div class="select-text left">Nº Habs.</div>
+                                        <select onchange="selectChange(this)">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="date-selector">
+                                <div class="selector-content">
+                                    <div class="selectholder">
+                                        <div class="select-text left">Nº Adultos</div>
+                                        <select onchange="selectChange(this)">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="date-selector">
+                                <div class="selector-content">
+                                    <div class="checkboxholder">
+                                        <div class="checkbox-text left">¿Niños?</div>
+                                        <input type="checkbox" onclick="checkboxChange(this)"/>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
+                        <div class="dates margin-top-10">
+                            <div class="date-selector">
+                                <div class="selector-content">
+                                    <div class="select-text left">Edad Niño 1
+                                        <input type="text" class="input inline"/>
+
+                                        <div class="spinner">
+                                            <div class="top" onchange="spinnerChange(this, 'decrease')"></div>
+                                            <div class="bottom" onchange="spinnerChange(this, 'increase')"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="date-selector">
+                                <div class="selector-content">
+                                    <div class="select-text left">Edad Niño 2
+                                        <input type="text" class="input inline"/>
+
+                                        <div class="spinner">
+                                            <div class="top" onclick="spinnerChange(this, 'decrease')"></div>
+                                            <div class="bottom" onclick="spinnerChange(this, 'increase')"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="footer-form margin-top-10">
+                            <div class="button button2" onclick="mainNavigator.pushPage('resultados.html');">BUSCAR
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="footer-form margin-top-10">
-                        <div class="button button2" onclick="mainNavigator.pushPage('resultados.html');">BUSCAR</div>
-                    </div>
                 </div>
-
-            </div>
-        </ons-content>
-    </ons-page>
+            </ons-content>
+        </ons-page>
     </ons-navigator>
 </ons-template>
 
@@ -430,7 +438,8 @@
                                 Hotel Miguel Angel
                             </div>
                             <div class="desc">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget faucibus tellus. Duis eleifend augue consequat nisl pulvinar dapibus.
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget faucibus tellus.
+                                Duis eleifend augue consequat nisl pulvinar dapibus.
                                 <span class="list-link">Leer más ></span>
                             </div>
                         </ons-col>
@@ -451,7 +460,8 @@
                                 Hotel Miguel Angel
                             </div>
                             <div class="desc">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget faucibus tellus. Duis eleifend augue consequat nisl pulvinar dapibus.
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget faucibus tellus.
+                                Duis eleifend augue consequat nisl pulvinar dapibus.
                                 <span class="list-link">Leer más ></span>
                             </div>
                         </ons-col>
@@ -472,7 +482,8 @@
                                 Hotel Miguel Angel
                             </div>
                             <div class="desc">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget faucibus tellus. Duis eleifend augue consequat nisl pulvinar dapibus.
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget faucibus tellus.
+                                Duis eleifend augue consequat nisl pulvinar dapibus.
                                 <span class="list-link">Leer más ></span>
                             </div>
                         </ons-col>
@@ -493,7 +504,8 @@
                                 Hotel Miguel Angel
                             </div>
                             <div class="desc">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget faucibus tellus. Duis eleifend augue consequat nisl pulvinar dapibus.
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget faucibus tellus.
+                                Duis eleifend augue consequat nisl pulvinar dapibus.
                                 <span class="list-link">Leer más ></span>
                             </div>
                         </ons-col>
@@ -514,7 +526,8 @@
                                 Hotel Miguel Angel
                             </div>
                             <div class="desc">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget faucibus tellus. Duis eleifend augue consequat nisl pulvinar dapibus.
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget faucibus tellus.
+                                Duis eleifend augue consequat nisl pulvinar dapibus.
                                 <span class="list-link">Leer más ></span>
                             </div>
                         </ons-col>
@@ -573,7 +586,8 @@
                         Zona los cigarrales
                     </div>
                     <div class="desc">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget faucibus tellus. Duis eleifend augue consequat nisl pulvinar dapibus.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget faucibus tellus. Duis
+                        eleifend augue consequat nisl pulvinar dapibus.
                     </div>
                 </ons-col>
                 <ons-col class="price-container margin5" width="80px">
@@ -588,7 +602,7 @@
                 </ons-col>
 
                 <ons-col width="35px" class="collapse-container">
-                    <img class="collapse-icon" src="images/icon_collapse.png" />
+                    <img class="collapse-icon" src="images/icon_collapse.png"/>
                 </ons-col>
             </ons-row>
 
@@ -598,7 +612,7 @@
                 </ons-col>
 
                 <ons-col width="35px" class="collapse-container">
-                    <img class="collapse-icon" src="images/icon_collapse.png" />
+                    <img class="collapse-icon" src="images/icon_collapse.png"/>
                 </ons-col>
             </ons-row>
 
@@ -608,7 +622,7 @@
                 </ons-col>
 
                 <ons-col width="35px" class="collapse-container">
-                    <img class="collapse-icon" src="images/icon_collapse.png" />
+                    <img class="collapse-icon" src="images/icon_collapse.png"/>
                 </ons-col>
             </ons-row>
 
@@ -641,7 +655,8 @@
                 <div class="title">
                     <img class="biglogo responsive" src="images/logo_big.png">
                     <span>PACKS VACACIONALES</span>
-                </div></div>
+                </div>
+            </div>
 
             <div class="right">
                 <ons-toolbar-button class="separators-left" onclick="slidingMenu.toggle()">
@@ -669,7 +684,8 @@
                                 Zona los cigarrales
                             </div>
                             <div class="desc">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget faucibus tellus. Duis eleifend augue consequat nisl pulvinar dapibus.
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget faucibus tellus.
+                                Duis eleifend augue consequat nisl pulvinar dapibus.
                                 <span class="list-link">Leer más ></span>
                             </div>
                         </ons-col>
@@ -690,7 +706,8 @@
                                 Zona los cigarrales
                             </div>
                             <div class="desc">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget faucibus tellus. Duis eleifend augue consequat nisl pulvinar dapibus.
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget faucibus tellus.
+                                Duis eleifend augue consequat nisl pulvinar dapibus.
                                 <span class="list-link">Leer más ></span>
                             </div>
                         </ons-col>
@@ -711,7 +728,8 @@
                                 Zona los cigarrales
                             </div>
                             <div class="desc">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget faucibus tellus. Duis eleifend augue consequat nisl pulvinar dapibus.
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget faucibus tellus.
+                                Duis eleifend augue consequat nisl pulvinar dapibus.
                                 <span class="list-link">Leer más ></span>
                             </div>
                         </ons-col>
@@ -732,7 +750,8 @@
                                 Zona los cigarrales
                             </div>
                             <div class="desc">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget faucibus tellus. Duis eleifend augue consequat nisl pulvinar dapibus.
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget faucibus tellus.
+                                Duis eleifend augue consequat nisl pulvinar dapibus.
                                 <span class="list-link">Leer más ></span>
                             </div>
                         </ons-col>
@@ -753,7 +772,8 @@
                                 Zona los cigarrales
                             </div>
                             <div class="desc">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget faucibus tellus. Duis eleifend augue consequat nisl pulvinar dapibus.
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget faucibus tellus.
+                                Duis eleifend augue consequat nisl pulvinar dapibus.
                                 <span class="list-link">Leer más ></span>
                             </div>
                         </ons-col>
@@ -785,7 +805,7 @@
 
             <div class="right">
                 <ons-toolbar-button class="separators-left" onclick="slidingMenu.toggle()">
-                    <img class="header-icon" src="images/icon_buscador_general.png">
+                    <img class="header-icon" src="images/icon_lupa.png">
                 </ons-toolbar-button>
 
                 <ons-toolbar-button class="separators-left" onclick="slidingMenu.toggle()">
@@ -916,6 +936,203 @@
                 </div>
             </div>
 
+        </ons-content>
+    </ons-page>
+</ons-template>
+
+<ons-template id="ultimo_minuto_ciudad.html">
+    <ons-page ng-controller="UltimoMinutoCiudadController">
+
+        <ons-toolbar>
+            <div class="left">
+                <ons-toolbar-button class="separators-right" onclick="slidingMenu.toggle()">
+                    <img class="header-icon" src="images/icon_menu.png">
+                </ons-toolbar-button>
+            </div>
+
+            <div class="center">
+                <div class="title">
+                    <img class="biglogo responsive" src="images/logo_big.png">
+                    <span>ULTIMO MINUTO</span>
+                </div>
+            </div>
+
+            <div class="right">
+                <ons-toolbar-button class="separators-left" onclick="slidingMenu.toggle()">
+                    <img class="header-icon" src="images/icon_lupa.png">
+                </ons-toolbar-button>
+
+                <ons-toolbar-button class="separators-left" onclick="slidingMenu.toggle()">
+                    <img class="header-icon" src="images/icon_map.png">
+                </ons-toolbar-button>
+            </div>
+        </ons-toolbar>
+
+        <ons-content>
+
+            <ons-row class="top5">
+                <ons-col class="collapse-title2">
+                    <div class="title2">MADRID</div>
+                </ons-col>
+            </ons-row>
+            <img src="images/img_ciudad.png">
+            <ons-list>
+                <ons-list-item modifier="chevron" class="list-item-container minimal" onclick="goToResultado(this)">
+                    <div class="title-reserva">Hotel 4* - Zona Barrio Prosperidad</div>
+                    <ons-row>
+                        <ons-col>
+                            <div class="reservar-box green">
+                                <div class="title">Hoy</div>
+                                <div class="hour-price">RESERVAR | 34&euro;</div>
+                            </div>
+                        </ons-col>
+
+                        <ons-col>
+                            <div class="reservar-box gray">
+                                <div class="title">Hoy</div>
+                                <div class="hour-price">RESERVAR | 34&euro;</div>
+                            </div>
+                        </ons-col>
+
+                        <ons-col>
+                            <div class="reservar-box orange">
+                                <div class="title">Hoy</div>
+                                <div class="hour-price">RESERVAR | 34&euro;</div>
+                            </div>
+                        </ons-col>
+                    </ons-row>
+                </ons-list-item>
+
+                <ons-list-item modifier="chevron" class="list-item-container minimal" onclick="goToResultado(this)">
+                    <div class="title-reserva">Hotel 4* - Zona Barrio Prosperidad</div>
+                    <ons-row>
+                        <ons-col>
+                            <div class="reservar-box green">
+                                <div class="title">Hoy</div>
+                                <div class="hour-price">RESERVAR | 34&euro;</div>
+                            </div>
+                        </ons-col>
+
+                        <ons-col>
+                            <div class="reservar-box gray">
+                                <div class="title">Hoy</div>
+                                <div class="hour-price">RESERVAR | 34&euro;</div>
+                            </div>
+                        </ons-col>
+
+                        <ons-col>
+                            <div class="reservar-box orange">
+                                <div class="title">Hoy</div>
+                                <div class="hour-price">RESERVAR | 34&euro;</div>
+                            </div>
+                        </ons-col>
+                    </ons-row>
+                </ons-list-item>
+
+                <ons-list-item modifier="chevron" class="list-item-container minimal" onclick="goToResultado(this)">
+                    <div class="title-reserva">Hotel 4* - Zona Barrio Prosperidad</div>
+                    <ons-row>
+                        <ons-col>
+                            <div class="reservar-box green">
+                                <div class="title">Hoy</div>
+                                <div class="hour-price">RESERVAR | 34&euro;</div>
+                            </div>
+                        </ons-col>
+
+                        <ons-col>
+                            <div class="reservar-box gray">
+                                <div class="title">Hoy</div>
+                                <div class="hour-price">RESERVAR | 34&euro;</div>
+                            </div>
+                        </ons-col>
+
+                        <ons-col>
+                            <div class="reservar-box orange">
+                                <div class="title">Hoy</div>
+                                <div class="hour-price">RESERVAR | 34&euro;</div>
+                            </div>
+                        </ons-col>
+                    </ons-row>
+                </ons-list-item>
+
+                <ons-list-item modifier="chevron" class="list-item-container minimal" onclick="goToResultado(this)">
+                    <div class="title-reserva">Hotel 4* - Zona Barrio Prosperidad</div>
+                    <ons-row>
+                        <ons-col>
+                            <div class="reservar-box green">
+                                <div class="title">Hoy</div>
+                                <div class="hour-price">RESERVAR | 34&euro;</div>
+                            </div>
+                        </ons-col>
+
+                        <ons-col>
+                            <div class="reservar-box gray">
+                                <div class="title">Hoy</div>
+                                <div class="hour-price">RESERVAR | 34&euro;</div>
+                            </div>
+                        </ons-col>
+
+                        <ons-col>
+                            <div class="reservar-box orange">
+                                <div class="title">Hoy</div>
+                                <div class="hour-price">RESERVAR | 34&euro;</div>
+                            </div>
+                        </ons-col>
+                    </ons-row>
+                </ons-list-item>
+
+                <ons-list-item modifier="chevron" class="list-item-container minimal" onclick="goToResultado(this)">
+                    <div class="title-reserva">Hotel 4* - Zona Barrio Prosperidad</div>
+                    <ons-row>
+                        <ons-col>
+                            <div class="reservar-box green">
+                                <div class="title">Hoy</div>
+                                <div class="hour-price">RESERVAR | 34&euro;</div>
+                            </div>
+                        </ons-col>
+
+                        <ons-col>
+                            <div class="reservar-box gray">
+                                <div class="title">Hoy</div>
+                                <div class="hour-price">RESERVAR | 34&euro;</div>
+                            </div>
+                        </ons-col>
+
+                        <ons-col>
+                            <div class="reservar-box orange">
+                                <div class="title">Hoy</div>
+                                <div class="hour-price">RESERVAR | 34&euro;</div>
+                            </div>
+                        </ons-col>
+                    </ons-row>
+                </ons-list-item>
+
+                <ons-list-item modifier="chevron" class="list-item-container minimal" onclick="goToResultado(this)">
+                    <div class="title-reserva">Hotel 4* - Zona Barrio Prosperidad</div>
+                    <ons-row>
+                        <ons-col>
+                            <div class="reservar-box green">
+                                <div class="title">Hoy</div>
+                                <div class="hour-price">RESERVAR | 34&euro;</div>
+                            </div>
+                        </ons-col>
+
+                        <ons-col>
+                            <div class="reservar-box gray">
+                                <div class="title">Hoy</div>
+                                <div class="hour-price">RESERVAR | 34&euro;</div>
+                            </div>
+                        </ons-col>
+
+                        <ons-col>
+                            <div class="reservar-box orange">
+                                <div class="title">Hoy</div>
+                                <div class="hour-price">RESERVAR | 34&euro;</div>
+                            </div>
+                        </ons-col>
+                    </ons-row>
+                </ons-list-item>
+            </ons-list>
         </ons-content>
     </ons-page>
 </ons-template>

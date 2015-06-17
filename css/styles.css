@@ -184,6 +184,10 @@ h3 span {
     background:#bc6930;
 }
 
+.gray {
+    background:#878787;
+}
+
 .home-footer {
     display: table;
     width: 100%;
@@ -682,6 +686,18 @@ input[type=text], input[type=password] {
     margin-bottom:8px;
 }
 
+.collapse-title2 .title2 {
+    font-family: 'SansThin-Light';
+    font-size:16px;
+    color:#fff;
+    padding:6px;
+    border-bottom:1px solid #fff;
+    margin-left:15px;
+    margin-right:15px;
+    margin-top:5px;
+    margin-bottom:8px;
+}
+
 .collapse-title .title {
     font-family: 'SansThin-Light';
     font-size:16px;
@@ -735,6 +751,61 @@ input[type=text], input[type=password] {
     background-size:10px auto;
 }
 
+.list-item2 .title3 {
+    font-family: 'SansThin-Light';
+    font-size:16px;
+    color:#3761ad;
+}
+
 .width-footer {
     padding-bottom:118px;
+}
+
+.title-reserva {
+    font-family: 'SansThin-Light';
+    font-size:16px;
+    color:#3761ad;
+    font-weight: bold;
+    margin-left:10px;
+    margin-bottom:5px;
+}
+
+.reservar-box {
+    padding:5px;
+    padding-top:10px;
+    padding-bottom:10px;
+    margin:2px;
+}
+
+.reservar-box .title {
+    font-family: 'SansThin-Light';
+    font-size:13px;
+    color:#fff;
+    text-align:center;
+    padding-bottom:5px;
+}
+
+.reservar-box .hour-price {
+    font-family: 'SansBook';
+    font-size:13px;
+    color:#fff;
+    text-align:center;
+}
+
+.list-item-container.minimal {
+    margin:0;
+    padding:0;
+    padding-top:10px;
+    padding-bottom:10px;
+    border-top:solid 1px #c9c9c9;
+    border-bottom:solid 1px #c9c9c9;
+    margin-bottom:5px;
+}
+
+.list-item-container.minimal:first-child {
+    border-top:none;
+}
+
+.list-item-container.minimal:before {
+    top:14px;
 }
