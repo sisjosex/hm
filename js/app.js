@@ -130,6 +130,95 @@ module.controller('ResultadoBusquedaController', function ($scope) {
     });
 });
 
+var UltimoMinutoHotelController;
+module.controller('UltimoMinutoHotelController', function ($scope) {
+    ons.ready(function () {
+
+        var latLong = new google.maps.LatLng(40.71535,-3.98943);
+
+        map = new google.maps.Map(document.getElementById('map'), {
+            center: latLong,
+            zoom: 18,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        });
+
+        var marker = new google.maps.Marker({
+            map: map,
+            //position: new google.maps.LatLng(lat, lng),
+            title: "move this marker",
+            icon: 'images/icon_marker.png',
+            //shadow: shadow,
+            //shape: shape,
+            position: latLong,
+            animation:google.maps.Animation.DROP,
+            draggable:false
+        });
+
+        /*
+         var infowindow = new google.maps.InfoWindow();
+         infowindow.setContent("<p style='color:red;font-weight:bold;'><img width='150' src='img/logo.png'/></p>");
+         infowindow.open(map,marker);
+         */
+
+        google.maps.event.addListener(marker, 'click', function() {
+            infowindow.open(map,marker);
+        });
+
+
+
+        $('#map').on('touchmove', function(e){
+            e.preventDefault();
+            e.stopPropagation();
+        });
+
+    });
+});
+
+
+var VacacionesDetalleController;
+module.controller('VacacionesDetalleController', function ($scope) {
+    ons.ready(function () {
+
+        var latLong = new google.maps.LatLng(40.71535,-3.98943);
+
+        map = new google.maps.Map(document.getElementById('map'), {
+            center: latLong,
+            zoom: 18,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        });
+
+        var marker = new google.maps.Marker({
+            map: map,
+            //position: new google.maps.LatLng(lat, lng),
+            title: "move this marker",
+            icon: 'images/icon_marker.png',
+            //shadow: shadow,
+            //shape: shape,
+            position: latLong,
+            animation:google.maps.Animation.DROP,
+            draggable:false
+        });
+
+        /*
+         var infowindow = new google.maps.InfoWindow();
+         infowindow.setContent("<p style='color:red;font-weight:bold;'><img width='150' src='img/logo.png'/></p>");
+         infowindow.open(map,marker);
+         */
+
+        google.maps.event.addListener(marker, 'click', function() {
+            infowindow.open(map,marker);
+        });
+
+
+
+        $('#map').on('touchmove', function(e){
+            e.preventDefault();
+            e.stopPropagation();
+        });
+
+    });
+});
+
 function goToInicio() {
 
     slidingMenu.close();
@@ -185,6 +274,18 @@ function goToUltimoMinutoCiudad() {
     mainNavigator.pushPage('ultimo_minuto_ciudad.html', {transition:'slide'});
 }
 
+function goToUltimoMinutoHotel() {
+    slidingMenu.close();
+
+    mainNavigator.pushPage('ultimo_minuto_hotel.html', {transition:'slide'});
+}
+
+function goToVacacionesDetalle() {
+    slidingMenu.close();
+
+    mainNavigator.pushPage('vacaciones_detalle.html', {transition:'slide'});
+}
+
 function onChangeCheckbox(element) {
 
     console.log(element);
@@ -222,12 +323,14 @@ function checkboxChange(element) {
         element = $(element);
 
         element.parent().find('.checkbox-text').addClass('on');
+        element.parent().find('.checkbox-text2').addClass('on');
 
     } else {
 
         element = $(element);
 
         element.parent().find('.checkbox-text').removeClass('on');
+        element.parent().find('.checkbox-text2').removeClass('on');
     }
 
 }

@@ -361,6 +361,7 @@ input[type=text], input[type=password] {
 .date-selector {
     width:50%;
     display:table-cell;
+    min-width: 18px;
 }
 
 .date-selector-content {
@@ -453,9 +454,19 @@ input[type=text], input[type=password] {
     background:url('../images/icon_checkbox_off.png') right center no-repeat transparent;
     background-size: 20px auto;
     padding-right:25px;
+    min-width:9px;
+    min-height:20px;
 }
 
-.checkbox-text.on {
+.checkboxholder .checkbox-text2 {
+    background: url('../images/icon_checkbox_off.png') right center no-repeat transparent;
+    background-size: 23px auto;
+    padding-right: 0;
+    min-width: 20px;
+    min-height: 20px;
+}
+
+.checkbox-text.on, .checkbox-text2.on {
     background:url('../images/icon_checkbox_on.png') right center no-repeat transparent;
     background-size: 20px auto;
 }
@@ -464,6 +475,10 @@ input[type=text], input[type=password] {
     font-family: 'SansThin-Light';
     font-size:18px;
     color:#363636;
+}
+
+.select-text.few {
+    font-size:14px;
 }
 
 .input.inline {
@@ -596,6 +611,17 @@ input[type=text], input[type=password] {
     padding-right:5px;
 }
 
+.tab2 {
+    color:#000;
+    font-family: 'OpenSans-Semibold';
+    display: table-cell;
+    background: transparent;
+    margin:0;
+    padding:0;
+    padding-left:5px;
+    padding-right:5px;
+}
+
 .tab-text {
     color:#fff;
     background:#cccccc;
@@ -604,6 +630,19 @@ input[type=text], input[type=password] {
     display:block;
     width:100%;
     text-align: center;
+}
+
+.tab2 .tab-text {
+    color:#000;
+    background:#fff;
+    /*margin-left:5px;
+    margin-right:5px;*/
+    display:block;
+    width:100%;
+    text-align: center;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    padding:5px;
 }
 
 .tab.selected, .tab.selected .tab-text {
@@ -808,4 +847,73 @@ input[type=text], input[type=password] {
 
 .list-item-container.minimal:before {
     top:14px;
+}
+
+.border-left {
+    border-left:solid 1px #9a999e;
+}
+
+.date-selector.big {
+    padding-top:5px;
+    padding-bottom:5px;
+}
+
+.offers {
+    margin-left:10px;
+    margin-right:10px;
+}
+
+.offer-day {
+    padding-top:5px;
+    padding-bottom:0px;
+}
+
+.offer-day .title {
+    color:#fff;
+    font-family: 'SansBook';
+    border-left:solid 2px #fff;
+    padding-left:10px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.offer-day .title2 {
+    color:#fff;
+    font-family: 'SansThin-Light';
+}
+
+.offer-day .date-selector {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.offers .location {
+    color:#666666;
+}
+
+.offers .name {
+    color:#363636;
+}
+
+.button.volver, .button.continuar {
+    min-width: 136px;
+    max-width: 136px;
+    background: transparent;
+    color:#3761ad;
+    font-family: 'OpenSans-Semibold';
+}
+
+.button.volver {
+    background:url('../images/icon_volver.png') 0 center no-repeat transparent;
+    background-size: 10px auto;
+    padding-left:25px;
+    text-align: left;
+    color:#908f94;
+}
+
+.button.continuar {
+    background:url('../images/icon_continuar.png') right center no-repeat transparent;
+    background-size: 10px auto;
+    padding-right:25px;
+    text-align: right;
 }
