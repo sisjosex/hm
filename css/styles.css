@@ -478,7 +478,7 @@ input[type=text], input[type=password] {
 }
 
 .select-text.few {
-    font-size:14px;
+    font-size:12px;
 }
 
 .input.inline {
@@ -856,6 +856,7 @@ input[type=text], input[type=password] {
 .date-selector.big {
     padding-top:5px;
     padding-bottom:5px;
+    padding-left: 10px;
 }
 
 .offers {
@@ -866,6 +867,8 @@ input[type=text], input[type=password] {
 .offer-day {
     padding-top:5px;
     padding-bottom:0px;
+    padding-right:10px;
+    padding-left:10px;
 }
 
 .offer-day .title {
@@ -916,4 +919,19 @@ input[type=text], input[type=password] {
     background-size: 10px auto;
     padding-right:25px;
     text-align: right;
+}
+
+.title.arrow {
+    border:none;
+    font-family: 'SansThin-Light';
+    font-weight: bold;
+    padding-right:20px;
+    background:url('../images/icon_arrow2.png') right center no-repeat transparent;
+    background-size: 10px auto;
+}
+
+.title3 {
+    border:none;
+    font-family: 'SansBook';
+    color:#fff;
 }

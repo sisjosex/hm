@@ -43,7 +43,7 @@
 <body onload="loadScripts()">
 
 
-<ons-sliding-menu main-page="ultimo_minuto_hotel.html" menu-page="menu.html" max-slide-distance="260px" type="push"
+<ons-sliding-menu main-page="vacaciones_detalle.html" menu-page="menu.html" max-slide-distance="260px" type="push"
                   var="slidingMenu">
 </ons-sliding-menu>
 
@@ -1358,9 +1358,13 @@
         <ons-content>
             <div class="map-container">
                 <div id="map" style="height:150px"></div>
-                <div class="tabs2 map-tabs">
-                    <div class="button tab2 selected" style="max-width:50%;"><span
-                            class="tab-text">Ver en el mapa</span>
+                <div class="tabs map-tabs">
+                    <div class="button tab selected" style="max-width:50%;"><span
+                            class="tab-text">VER EN MAPA</span>
+                    </div>
+
+                    <div class="button tab" style="max-width:50%;"><span
+                            class="tab-text">VER FOTOS</span>
                     </div>
                 </div>
             </div>
@@ -1414,73 +1418,56 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="date-selector big border-left">
+                        <div class="selector-content">
+                            <div class="selectholder">
+                                <div class="select-text few left">Nº </div>
+                                <select onchange="selectChange(this)">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <ons-row class="offer-day green top5">
                     <ons-col class="padding-5">
-                        <div class="title2">
-                            HOY 28 / 02 / 2014
+                        <div class="title3">
+                            MARZO 2014
                         </div>
                     </ons-col>
-                    <ons-col class="center" width="60px">
-                        <div class="title">
-                            39&euro;
-                        </div>
-                    </ons-col>
-                    <ons-col class="center" width="30px">
-                        <div class="date-selector">
-                            <div class="selector-content2">
-                                <div class="checkboxholder">
-                                    <div class="checkbox-text2 left"></div>
-                                    <input type="checkbox" onclick="checkboxChange(this)"/>
-                                </div>
-                            </div>
+                    <ons-col class="padcenter" width="120px">
+                        <div class="title arrow">
+                            Elegir fechas
                         </div>
                     </ons-col>
                 </ons-row>
 
                 <ons-row class="offer-day magenta top5">
                     <ons-col class="padding-5">
-                        <div class="title2">
-                            HOY 28 / 02 / 2014
+                        <div class="title3">
+                            ABRIL 2014
                         </div>
                     </ons-col>
-                    <ons-col class="center" width="60px">
-                        <div class="title">
-                            39&euro;
-                        </div>
-                    </ons-col>
-                    <ons-col class="center" width="30px">
-                        <div class="date-selector">
-                            <div class="selector-content2">
-                                <div class="checkboxholder">
-                                    <div class="checkbox-text2 left"></div>
-                                    <input type="checkbox" onclick="checkboxChange(this)"/>
-                                </div>
-                            </div>
+                    <ons-col class="padcenter" width="120px">
+                        <div class="title arrow">
+                            Elegir fechas
                         </div>
                     </ons-col>
                 </ons-row>
 
                 <ons-row class="offer-day orange top5">
                     <ons-col class="padding-5">
-                        <div class="title2">
-                            HOY 28 / 02 / 2014
+                        <div class="title3">
+                            MAYO 2014
                         </div>
                     </ons-col>
-                    <ons-col class="center" width="60px">
-                        <div class="title">
-                            39&euro;
-                        </div>
-                    </ons-col>
-                    <ons-col class="center" width="30px">
-                        <div class="date-selector">
-                            <div class="selector-content2">
-                                <div class="checkboxholder">
-                                    <div class="checkbox-text2 left"></div>
-                                    <input type="checkbox" onclick="checkboxChange(this)"/>
-                                </div>
-                            </div>
+                    <ons-col class="padcenter" width="120px">
+                        <div class="title arrow">
+                            Elegir fechas
                         </div>
                     </ons-col>
                 </ons-row>
